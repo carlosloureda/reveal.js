@@ -1,50 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/custom/mentorhip.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+    <!-- <link rel="stylesheet" href="css/theme/sky.css" id="theme" /> -->
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <!-- <div> -->
+          <img
+            class="custom-img"
+            src="./assets/images/udacity.svg"
+            alt="Udacity"
+            width="200"
+          />
+          <img
+            class="custom-img"
+            src="./assets/images/carlos.jpeg"
+            alt="Author's photo"
+            width="200"
+          />
+          <!-- </div> -->
+          <h1 class="custom-text">React Mentorship</h1>
+          <h2>Hooks</h2>
+          <div>
+            <ul>
+              <li class="custom-text">useEffect</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div>
+            When we want to build <strong>strong</strong> and
+            <strong>reliable</strong> pieces of software, one way to archieve
+            that is by minimizing and encapsulating the side effects in our
+            program. We name <strong>side effects</strong> to the changes in the
+            state that can be observed outside of its local environment.
+          </div>
+        </section>
+        <section>
+          <ul>
+            <li>Mutating non-local variables</li>
+          </ul>
+          <pre>
+			  <code data-trim data-noescape data-line-numbers>
+				function addTodo (todo) {
+				  todos.push(todo)
+				}
+				</code>
+			</pre>
+          <ul>
+            <li>Making network requests</li>
+          </ul>
+          <pre>
+				<code data-trim data-noescape data-line-numbers>
+				function getGithubProfile (username) {
+				  return fetch(`https://api.github.com/users/${username}`)
+						.then((res) => res.json())
+				}
+				  </code>
+			  </pre>
+          <ul>
+            <li>Updating the DOM</li>
+          </ul>
+          <pre>
+				<code data-trim data-noescape data-line-numbers>
+					function updateDocumentTitle (title) {
+					  document.title = title
+					}
+				  </code>
+			  </pre>
+        </section>
+      </div>
+    </div>
 
-		<script src="js/reveal.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/highlight/highlight.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/zoom-js/zoom.js", async: true }
+        ]
+      });
+    </script>
+  </body>
 </html>
